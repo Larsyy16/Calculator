@@ -54,3 +54,7 @@ body {
 #delete {
     background-color: #FFCCCB;
 }
+#buttons > div {
+    display:flex;
+    flex-direction: row-reverse;
+}

@@ -30,7 +30,7 @@ equals key
 -don't connect to js yet
 -add clear button*/
 
-const container = document.querySelector('#container');
+/*const container = document.querySelector('#container');*/
 
 function createGrid(numPerBox) {
     for (let i=numPerBox; i >1; i--){
@@ -73,9 +73,20 @@ let elements = document.querySelectorAll('button.button');
 
 
 
-
 /* 4. create function that populate display when you click number buttons.
         I should be storing the display value somewhere*/
+let display = document.querySelector('#display');
+const display1 = document.createElement('p');
+const display2 = document.createElement('p');
+
+let buttonNumbers = document.getElementsByClassName("button");
+for (let i=0; i<buttonNumbers.length; i++) {
+    buttonNumbers[i].addEventListener("click",function() {
+        display1.textContent +=`${buttonNumbers[i].innerHTML}`
+    });
+}
+display.appendChild(display1);
+
 
 /* 5. Make the calculator work (hardest part)*/
 
