@@ -1,0 +1,56 @@
+#container {
+display:flex;
+border:2px solid black;
+flex-direction:column;
+background-color:lightblue;
+border-radius:3px;
+align-content:center;
+align-items:center;
+}
+
+
+
+#display {
+    /*margin:3px;*/
+    background-color:white;
+    width:140px;
+    border-radius:5px;
+    margin-top:10px;
+
+}
+
+#operator {
+    display:flex;
+    flex-direction: column;
+}
+#allButtons {
+    display:flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right:20px;
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    margin-top:70px;
+}
+
+.button {
+    padding:10px;
+    margin:3px;
+    width:30px;
+}
+.topButtons {
+    margin-top: 10px;
+    padding-left:15px;
+    padding-right:15px;
+    
+}
+#clear {
+    background-color: lightgray;
+}
+#delete {
+    background-color: #FFCCCB;
+}
