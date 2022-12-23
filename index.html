@@ -12,16 +12,16 @@
     <div id="container">
         <div id="display"></div>
         <div id="clearDelete"> 
-            <input type="button" class= "topButtons" id="clear" value="Clear">
-            <input type="button" class = "topButtons" id="delete" value="Delete">
+            <input type="button" class= "topButtons" id="clear" onclick = "clearCalc()" value="Clear">
+            <input type="button" class = "topButtons" id="delete" onclick = "delDisplay()" value="Delete">
         </div>
         <div id="allButtons">
         <div id = "buttons"> </div>
         <div id = "operator"> 
-        <input type="button" class= 'button' id= "add" onclick="add()" value="+">
-        <input type="button" class= 'button' id="subtract" onclick="subtract()" value="-">
-        <input type="button" class= 'button' id="multiply" onclick="multiply()" value="*">
-        <input type="button" class= 'button' id="divide" onclick="divide()" value="/">
+        <input type="button" class= 'button op' id= "add" value="+">
+        <input type="button" class= 'button op' id="subtract" value="-">
+        <input type="button" class= 'button op' id="multiply"  value="*">
+        <input type="button" class= 'button op' id="divide" value="/">
         </div>
         </div>
     </div>
@@ -34,5 +34,8 @@
 
     <script src="script.js">
     </script>
+
+
+<footer>Lars K © 2022</footer>
 </body>
 </html>
