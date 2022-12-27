@@ -20,6 +20,7 @@ width:180px;
     display:flex;
     flex-direction:column-reverse;
     align-items:flex-end;
+    overflow:hidden
 
 }
 

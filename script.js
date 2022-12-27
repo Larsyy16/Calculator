@@ -79,7 +79,7 @@ let elements = document.querySelectorAll('button.button');
         if (i==0) {
             elements[x].innerHTML += `=`;
         } else if(i==2) {
-            elements[x].innerHTML += '.  ';
+            elements[x].innerHTML += '.';
         } else if (i==1) {
             elements[x].innerHTML += 0;
         } else {elements[x].innerHTML += `${h}`}
@@ -107,13 +107,31 @@ for (let i=0; i<buttonNumbers.length; i++) {
 for (let i=0; i<buttonNumbers.length; i++) {
     buttonNumbers[i].addEventListener("click",function() {
         if(`${buttonNumbers[i].innerHTML}`=='=') {
+
+            
+
+
             storage.push(+display1.textContent);
+
+            
+
             operate();
+
+            
             storage = storage.map(function(each_number) {
                 return Number(Math.round(each_number * 100000000)/100000000);
             });
+
+            if (storage[0]> 9999999999) {
+                storage = storage.map(function(each_number) {
+                    return each_number.toExponential(4);
+                });
+            }
+
+            if (storage== Infinity) {
+                display1.textContent = 'NO';
+            } else {display1.textContent=storage}
             /*display1.textContent = operate(storage.at(-3), storage.at(-2), storage.at(-1))*/
-            display1.textContent = storage;
             /*storage = [];*/
 
             console.log(+display1.textContent)
@@ -151,6 +169,7 @@ for (let i=0; i<operatorButtons.length; i++) {
     operatorButtons[i].addEventListener("click",function(){
         /*display2.textContent += display1.textContent + `${operatorButtons[i].value}`;*/
 
+       
         storage.push(+display1.textContent);
         operate();
 
