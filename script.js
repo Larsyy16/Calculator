@@ -101,11 +101,20 @@ let buttonNumbers = document.getElementsByClassName("button");
 for (let i=0; i<buttonNumbers.length; i++) {
     buttonNumbers[i].id= 'button-'+i;
 }
-
+let button9 = document.getElementById("button-9");
 /* Shows number when clicked on display1 and stores number in storage*/
 
 for (let i=0; i<buttonNumbers.length; i++) {
-    buttonNumbers[i].addEventListener("click",function() {
+    buttonNumbers[i].addEventListener("click",function event() {
+
+        if (`${buttonNumbers[i].innerHTML}`=='.') {
+            
+            button9.disabled = true;
+        }
+
+        
+
+
         if(`${buttonNumbers[i].innerHTML}`=='=') {
 
             
@@ -133,7 +142,7 @@ for (let i=0; i<buttonNumbers.length; i++) {
             } else {display1.textContent=storage}
             /*display1.textContent = operate(storage.at(-3), storage.at(-2), storage.at(-1))*/
             /*storage = [];*/
-
+            
             console.log(+display1.textContent)
             console.log(storage)
         } else{display1.textContent +=`${buttonNumbers[i].innerHTML}`
@@ -166,13 +175,13 @@ and result is shown on screen
 
 let operatorButtons = document.getElementsByClassName("op");
 for (let i=0; i<operatorButtons.length; i++) {
-    operatorButtons[i].addEventListener("click",function(){
+    operatorButtons[i].addEventListener("click",function op(){
         /*display2.textContent += display1.textContent + `${operatorButtons[i].value}`;*/
 
        
         storage.push(+display1.textContent);
         operate();
-
+        button9.disabled = false;
 
 
 
@@ -184,6 +193,7 @@ for (let i=0; i<operatorButtons.length; i++) {
         
         /*clear display1 */
         display1.textContent='';
+
         
         console.log(storage);
         console.log(storage2);
@@ -214,6 +224,7 @@ function operate() {
 /* Make clear button work*/
 
 function clearCalc() {
+    button9.disabled = false;
     display1.textContent ='';
     display2.textContent = '';
     storage = [];
@@ -223,6 +234,7 @@ function clearCalc() {
 }
 
 function delDisplay() {
+    button9.disabled = false;
     display1.textContent = '';
 }
 
